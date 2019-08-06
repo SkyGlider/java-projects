@@ -1,16 +1,29 @@
 
 public class ApplicationDriver {
     public static void main(String[] args) {
+
         Person tania = new Person();
 
         tania.setAge(21);
         System.out.println("Tania is " + tania.getAge() + " years old.");
 
-        tania.setName("Tania Chin");
-        System.out.println("Object's name is " + tania.getName());
+        String colour1 = "Red";
 
-        tania.setName("LongLongLongLongLongLong");
-        System.out.println("Object's name is " + tania.getName());
+        if (tania.setFavouriteColour(colour1)){
+            System.out.println("Object's favourite colour is " + tania.getFavouriteColour());
+        }
+        else{
+            System.out.println("Invalid colour, previous value retained");
+        }
+        
+        String name1 = "Tania Chin Chin Chin Chin Chin";
+        
+        if (tania.setName(name1)){
+            System.out.println("Object's name is " + tania.getName());
+        }
+        else{
+            System.out.println("Invalid name, previous value retained");
+        }
 
     }
 }

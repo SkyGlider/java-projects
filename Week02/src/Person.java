@@ -1,31 +1,48 @@
 
 public class Person {
-    private int age;
+
+    private String favouriteColour;
     private String name;
+    private int age;
 
+    public boolean setFavouriteColour(String newColour){
 
-    public void setAge(int newAge){
-        if (newAge > 0 && newAge <= 120)
-            age = newAge;
+        if (newColour.length() >= 1 && newColour.length() <= 10) {
+            favouriteColour = newColour;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
-    public int getAge(){
-        return age;
+    public String getFavouriteColour(){
+        return favouriteColour;
     }
 
-    public void setName(String newName){
+    public boolean setName(String newName){
 
         if (newName.length() > 0 && newName.length() < 21) {
             name = newName;
+            return true;
         }
         else{
-            System.out.println("Invalid name!");
+            return false;
         }
     }
 
-    public String getName() {
-        return name;
+    public String getName() { return name; }
+
+    public void setAge(int newAge){
+
+        if (newAge > 0 && newAge <= 120) {
+            age = newAge;
+        }
     }
+
+    public int getAge(){ return age; }
+
+
 }
 
 
