@@ -2,7 +2,7 @@
 public class Person {
 
     private String favouriteColour;
-    private String name;
+    private  String name;
     private int age;
 
     public boolean setFavouriteColour(String newColour){

@@ -4,7 +4,22 @@
 public class DoingIt {
     Window myWindow;
 
+    public DoingIt() {
+    }
+
     public void doIt(Window win){
+
+        int a = 5;
+        double b = 20.000007;
+        b = a + b;
+
+        boolean a1 = true;
+        int k = a-- * a--;
+
+
+        String k = "a =" + a1;
+        System.out.println(k);
+
         myWindow = win;
 
         String name = "", outString = "";
@@ -16,6 +31,8 @@ public class DoingIt {
         myWindow.clearOut();
         myWindow.writeOut(outString);
         myWindow.clearIn();
+        myWindow.writeOut(b);
+
 
     }
 

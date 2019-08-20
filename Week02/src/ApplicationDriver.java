@@ -16,7 +16,7 @@ public class ApplicationDriver {
             System.out.println("Invalid colour, previous value retained");
         }
         
-        String name1 = "Tania Chin Chin Chin Chin Chin";
+        String name1 = "Tania Chin";
         
         if (tania.setName(name1)){
             System.out.println("Object's name is " + tania.getName());
