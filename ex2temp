@@ -1,0 +1,23 @@
+public class MyClass {
+    public static void main(String args[]) {
+      caller();
+      
+    }
+    public static void caller(){
+        int n1 = 25;
+        int n2 =100;
+        
+        System.out.println("initially : n1 is = " + n1);
+        System.out.println("initially : n2 is = " + n2);
+        
+        responding(n1,n2);
+    }
+    
+    public static void responding(int n2, int n1){
+        
+        System.out.println("in the called function : n1 is = " + n1);
+        System.out.println("in the called function : n2 is = " + n2);
+        
+        
+    }
+}
