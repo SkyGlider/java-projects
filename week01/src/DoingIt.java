@@ -1,6 +1,8 @@
 /**
  * Created by shuxford on 25/12/2015.
  */
+import java.util.ArrayList;
+
 public class DoingIt {
     Window myWindow;
 
@@ -9,16 +11,15 @@ public class DoingIt {
 
     public void doIt(Window win){
 
-        int a = 5;
-        double b = 20.000007;
-        b = a + b;
+        int[] test = {-3,2,3,4,5};
+        int anothertest = countOdd(test);
+        System.out.println(anothertest);
 
-        boolean a1 = true;
-        int k = a-- * a--;
+        int[] test1 = {1,2,3};
+        int[] test2 = {4,5,6};
 
+        System.out.println(addVectors(test1,test2)[2]);
 
-        String k = "a =" + a1;
-        System.out.println(k);
 
         myWindow = win;
 
@@ -31,11 +32,34 @@ public class DoingIt {
         myWindow.clearOut();
         myWindow.writeOut(outString);
         myWindow.clearIn();
-        myWindow.writeOut(b);
+
 
 
     }
 
+    private int countOdd(int[] myArray){
+        int counter = 0;
+        for (int i : myArray){
+            if (i%2 !=0){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+    private int[] addVectors(int[] first,int[] another){
+        int[] newArray = new int[first.length];
+
+        if (first.length != another.length){
+            return null;
+        }
+        else{
+            for(int i = 0; i <first.length; i++){
+                newArray[i] = first[i] + another[i];
+            }
+            return newArray;
+        }
+    }
 
 
     // =========================================================================
