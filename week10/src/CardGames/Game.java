@@ -10,8 +10,7 @@ public class Game {
 
     private Deck d;
     private Hand[] hands;
-
-
+    private String outputChanges = "";
 
     private ArrayList<Hand> handsLessThan7 = new ArrayList<Hand>();
     private ArrayList<Integer> handIndices = new ArrayList<Integer>();
@@ -41,6 +40,7 @@ public class Game {
     }
 
     //ACCESSORS
+    /*
     public ArrayList<Hand> getHandsLessThan7() {
         return handsLessThan7;
     }
@@ -55,15 +55,12 @@ public class Game {
     public ArrayList<Integer> getCardIndices() {
         return cardIndices;
     }
-
     public Deck getD() {
         return d;
     }
-
-
+     */
 
     //MUTATORS
-
     public void updateScores(){
 
         scores = new int[NUMBER_OF_HANDS]; //elements are auto=init to 0
@@ -91,10 +88,10 @@ public class Game {
     //OTHER METHODS
     public void play(){
 
-
         dealCards();
-
+        swapCards();
         updateScores();
+
     }
 
     private void dealCards(){
@@ -112,8 +109,24 @@ public class Game {
         }
     }
 
+    private void swapCards(){
+        for(int swappable = 0; swappable < cardslessThan7.size();swappable++ ){
+            if ( getRandomInt() > 0){
+                Card newCard = d.deal();
+                int scoreChange = newCard.getValue() - cardslessThan7.get(swappable).getValue();
+                Hand theHand = handsLessThan7.get(swappable);
+                theHand.acceptCardAt(newCard,cardIndices.get(swappable));
+                outputChanges += "Hand " + handIndices.get(swappable) + " : Swapped " + cardslessThan7.get(swappable) + " with " + newCard + " (score chg: " + scoreChange + ")";
+            }else{
+                outputChanges += "Hand " + handIndices.get(swappable) + " : Swap Declined";
+            }
+            outputChanges += "\n";
+        }
+    }
+
     public String toString(){
-        String state = "";
+        String state = outputChanges;
+
 
         for (int i = 0; i < NUMBER_OF_HANDS; i++){
             state += "\nHand #" + i + ", Score:" + scores[i] + "\n";
@@ -128,5 +141,11 @@ public class Game {
         }
 
         return state;
+    }
+
+
+
+    private int getRandomInt(){
+        return 0 +(int)(Math.random()*((4-0)+0));
     }
 }

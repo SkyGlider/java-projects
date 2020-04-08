@@ -72,16 +72,14 @@ public class DoingIt {
         Game aGame = new Game(4, 5);
 
         myWindow.clearOut();
-
         aGame.play();
-
+        /*
         ArrayList<Hand> swappableHands = aGame.getHandsLessThan7();
         ArrayList<Card> swappableCards = aGame.getCardslessThan7();
         ArrayList<Integer> handIndices = aGame.getHandIndices();
         ArrayList<Integer> cardIndices = aGame.getCardIndices();
 
         for(int swappable = 0; swappable < swappableCards.size();swappable++ ){
-
             if ( getRandomInt() > 0){
                 Card newCard = aGame.getD().deal();
                 int scoreChange = newCard.getValue() - swappableCards.get(swappable).getValue();
@@ -91,50 +89,10 @@ public class DoingIt {
             }else{
                 myWindow.writeOutLine("Hand " + handIndices.get(swappable) + " : Swap Declined");
             }
-
-
-
-            /*
-            String answer;
-            do{
-                myWindow.writeOutLine("Hand "+ handIndices.get(swappable) + " ,Swap " + swappableCards.get(swappable).toString() + " for new card?");
-                answer = system.readIn().toLowerCase();
-            }
-            while( !answer.equals("y") || !answer.equals("n"));
-
-            if (answer.equals("y")) {
-                int currentVal = swappableCards.get(swappable).getValue();
-                int smallerCount = 0;
-                int biggerCount = 0;
-                int count =0;
-                Card[] myCardArray = new Card[4];
-
-                while(count<4){
-
-                    if (newCard.getValue() > currentVal && biggerCount < 3){
-                        myCardArray[count] = newCard;
-                        biggerCount++;
-                    }
-                    else if(newCard.getValue() < currentVal && smallerCount < 1){
-                        myCardArray[count] = newCard;
-                        smallerCount++;
-                    }
-                    count++;
-                }
-
-                int randomIndex = getRandomInt();
-                Card theChosenCard = myCardArray[randomIndex];
-
-            }
-             */
-
-
         }
         aGame.updateScores();
+        */
         myWindow.writeOutLine(aGame); //implicit toString
     }
 
-    private int getRandomInt(){
-        return 0 +(int)(Math.random()*((4-0)+0));
-    }
 }

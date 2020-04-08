@@ -5,8 +5,8 @@ package MonsterZoo;
  */
 public class ZooDriverFighting {
     public static void main(String[] args) {
-        Zoo theZoo = new Zoo(5);
-        //Zoo2 theZoo = new Zoo2(5);
+//        Zoo theZoo = new Zoo(5);
+        Zoo2 theZoo = new Zoo2(5);
 
         // add some monsters
         Monster m1 = new Monster("m1");
@@ -29,7 +29,9 @@ public class ZooDriverFighting {
 
 
         System.out.println(theZoo.toString());
-        //theZoo.fight(m3, 4, 0, m1, 3, 1);
+        theZoo.fight(m3, 4, 0, m1, 3, 1);
+        //theZoo.fight(m3, 5, 0, m1, 3, 1);
+        //theZoo.fight(m3, 5, 0, m1, 3, 1);
         System.out.println(theZoo.toString());
     }
 

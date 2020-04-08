@@ -3,8 +3,8 @@ package MonsterZoo;
 public class ZooDriver {
 
 	public static void main(String[] args) {
-		Zoo theZoo = new Zoo(5);
-		//Zoo2 theZoo = new Zoo2(5);
+		//Zoo theZoo = new Zoo(5);
+		Zoo2 theZoo = new Zoo2(5);
 		
 		// add some monsters
 		Monster m1 = new Monster("m1");
